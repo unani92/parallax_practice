@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <title>rellax practice</title>
+</head>
+<body>
+  <section>
+    <h1 class="rellax" data-rellax-speed="2">Master Guiter With Challenges</h1>
+    <p>Enter (or Create) guiter with challenge</p>
+    <button>Join Us Now</button>
+
+    <img src="/image/guitar.svg" class="guitar rellax" alt="guitar-image" data-rellax-speed="3">
+    <img src="/image/crowd.svg" class="crowd rellax" alt="crowd-image" >
+    <!-- <img src="/image/crowd-bg.svg" class="crowd-bg rellax" alt=""> -->
+  </section>
+
+  <section> 
+    <h2 data-scroll>Share Your Face Off</h2>
+    <p data-scroll>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ipsam dignissimos ex exercitationem praesentium nesciunt itaque culpa provident, odit vero optio ipsa deleniti eius, ut magnam excepturi dolorem. Earum, maiores.</p>
+  </section>
+   
+  <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js" integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ==" crossorigin="anonymous"></script>
+  <script>
+    ScrollOut ({
+      threshold: .2
+    })
+    var rellax = new Rellax('.rellax')
+  </script>
+</body>
+</html>
