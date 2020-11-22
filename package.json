@@ -1,0 +1,11 @@
+{
+  "name": "rellaxPractice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/unani92/parallax_practice.git",
+  "author": "unani <unani92@naver.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lax.js": "^2.0.2"
+  }
+}

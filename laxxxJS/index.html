@@ -3,9 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/main.css">
   <title>laxxx</title>
 </head>
 <body>
+  <section class="intro">
+    <p class="rellax scroll-text" data-rellax-speed="6">Scroll Down</p>
+  </section>
+  <section class="anim">
+    <h1 class="title lax">Animation</h1>
+    <p class="desc"></p>
+    <div class="box1 lax"></div>
+    <div class="box2 lax lax_preset_fadeInOut-114-0"></div>
+  </section>
+  <section></section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js" integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lax.js" ></script>
+
+  <script>
+    var rellax = new Rellax(".rellax")
+    window.onload = function () {
+      lax.init()
   
+      // Add a driver that we use to control our animations
+      lax.addDriver('scrollY', function () {
+        return window.scrollY
+      })
+  
+      // Add animation bindings to elements
+      lax.addElements(
+        '.box1',
+        {
+          scrollY: {
+            rotate: [
+              [0,1e9],
+              [0,1e9]
+            ]
+          }
+        }
+      )
+      lax.addElements(
+        '.title',
+        {
+          scrollY: {
+            translateX: [
+              ["elInY", "elCenterY", "elOutY"],
+              [0, 'screenWidth/4', 'screenWidth/1.5']
+            ]
+          }
+        }
+      )
+      lax.addElements('.desc', {}, {
+        onUpdate: function (driverVal, domElem) {
+
+          var arr = '이런것도 해봤는데 어때염??? 괜춘한가여?'.split('')
+          console.log(arr)
+          const scrollY = driverVal.scrollY[0]
+          const oCount = Math.floor((scrollY / 10) + 1)
+          if (oCount >= 72) {
+            const oString = arr.slice(0,oCount-72).join("")
+            console.log(oCount)
+            domElem.innerText = oString
+          } else {
+            domElem.innerText = ''
+          }
+        }
+      })
+    }
+  </script>
 </body>
 </html>
